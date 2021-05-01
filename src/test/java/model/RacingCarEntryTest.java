@@ -25,7 +25,29 @@ class RacingCarEntryTest {
 		assertThatIllegalArgumentException().isThrownBy(() -> {
 			carEntry = new RacingCarEntry("doctorfish");
 		});
+	}
+
+	@Test
+	@DisplayName("차량 별 이동 테스트")
+	void racingOneRound() {
+		carEntry = new RacingCarEntry("twins,bear,tiger");
+		int testRound = 30;
+		testRacing(testRound);
+		assertThat(isExistRacingOneMoreTrackCar()).isTrue();
 
 	}
 
+	private boolean isExistRacingOneMoreTrackCar() {
+		boolean isExist = false;
+		for (int i = 0; i < carEntry.getRacingCars().size() && (!isExist); i++) {
+			isExist = (carEntry.getRacingCars().get(i).getRacingLapCount() > 0);
+		}
+		return isExist;
+	}
+
+	private void testRacing(int testRound) {
+		for (int i = 0; i < testRound; i++) {
+			carEntry.racingOneRound();
+		}
+	}
 }
