@@ -43,4 +43,16 @@ class CarRaceTest {
 		assertThat(carRace.getRaceRound()).isEqualTo(5);
 	}
 
+	@Test
+	@DisplayName("레이싱 라운드 진행 테스트")
+	void racingTest() {
+		String carNames = "twins,bear,tiger";
+		String racingRound = "15";
+		carRace = new CarRace(carNames, racingRound);
+		carRace.racing();
+
+		assertThat(carRace.getRacingCarEntry().getRacingCars().get(0).getRacingLapCount() > 0).isTrue();
+		assertThat(carRace.getRacingCarEntry().getRacingCars().get(1).getRacingLapCount() > 0).isTrue();
+		assertThat(carRace.getRacingCarEntry().getRacingCars().get(2).getRacingLapCount() > 0).isTrue();
+	}
 }
