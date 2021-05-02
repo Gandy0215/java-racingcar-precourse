@@ -6,7 +6,7 @@ public class RacingUtils {
 
 	public static final int MIN_SCORE_OF_ONE_LAP = 4;
 
-	public boolean canRacingOneMoreLap(int racingScore) {
+	public boolean canRacingOneMoreLap(final int racingScore) {
 		return racingScore >= MIN_SCORE_OF_ONE_LAP;
 	}
 
