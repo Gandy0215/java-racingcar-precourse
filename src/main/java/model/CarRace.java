@@ -29,5 +29,10 @@ public class CarRace {
 			racingCarEntry.racingOneRound();
 			carRacingConsole.printRacingStatus(racingCarEntry.getRacingCars());
 		}
+		racingAward();
+	}
+
+	private void racingAward() {
+		carRacingConsole.printWinner(racingCarEntry.getWinnerList());
 	}
 }

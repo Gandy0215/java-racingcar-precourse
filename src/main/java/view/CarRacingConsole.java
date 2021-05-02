@@ -36,4 +36,28 @@ public class CarRacingConsole {
 		}
 		return lpadCarName.concat(racingCarName);
 	}
+
+	public void printWinner(final List<RacingCar> winnerList) {
+		final String AWARD_COMMENT = "가 최종 우승했습니다.";
+		String winners = getWinnerNames(winnerList);
+		System.out.println(winners.concat(AWARD_COMMENT));
+	}
+
+	private String getWinnerNames(List<RacingCar> winnerList) {
+		String winnerNames = "";
+		for (int i = 0; i < winnerList.size(); i++) {
+			winnerNames = winnerNames.concat(getWinnerName(winnerList.get(i), i));
+		}
+		return winnerNames;
+	}
+
+	private String getWinnerName(RacingCar car, int i) {
+		final String separator = ", ";
+		String winnerNames = "";
+		if (i > 0) {
+			winnerNames = winnerNames.concat(separator);
+		}
+		return winnerNames.concat(car.getRacingCarName());
+	}
+
 }
