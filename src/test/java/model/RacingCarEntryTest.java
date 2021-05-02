@@ -83,6 +83,7 @@ class RacingCarEntryTest {
 		assertThat(winnerList.get(0).getRacingCarName()).isEqualTo("bear");
 	}
 
+	// 임의대로 차량 이동(Random 기능을 제외한 테스트를 위한 기능)
 	private void setRacingLapCount(RacingCar car, int labCount) {
 		for (int i = 0; i < labCount; i++) {
 			car.raceTrack();
