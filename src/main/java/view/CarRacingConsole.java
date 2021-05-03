@@ -1,11 +1,23 @@
 package view;
 
 import java.util.List;
+import java.util.Scanner;
 
 import model.RacingCar;
 import utils.RacingCarValidationUtils;
 
 public class CarRacingConsole {
+
+	private Scanner scan = new Scanner(System.in); // Scanner 객체
+
+	public void setMessage(String comment) {
+		System.out.println(comment);
+	}
+
+	public String getMessage(String comment) {
+		System.out.println(comment);
+		return scan.nextLine();
+	}
 
 	public void printRacingStatus(final List<RacingCar> racingCars) {
 		for (RacingCar racingCar : racingCars) {

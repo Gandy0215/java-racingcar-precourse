@@ -16,7 +16,7 @@ class CarRaceTest {
 		String racingRound = "0";
 
 		assertThatIllegalArgumentException().isThrownBy(() -> {
-			carRace = new CarRace(carNames, racingRound);
+			carRace = new CarRace(new RacingCarEntry(carNames), racingRound);
 		});
 	}
 
@@ -27,7 +27,7 @@ class CarRaceTest {
 		String racingRound = "0";
 
 		assertThatIllegalArgumentException().isThrownBy(() -> {
-			carRace = new CarRace(carNames, racingRound);
+			carRace = new CarRace(new RacingCarEntry(carNames), racingRound);
 		});
 	}
 
@@ -36,7 +36,7 @@ class CarRaceTest {
 	void createCarRaceTest() {
 		String carNames = "twins,bear,tiger";
 		String racingRound = "5";
-		carRace = new CarRace(carNames, racingRound);
+		carRace = new CarRace(new RacingCarEntry(carNames), racingRound);
 
 		assertThat(carRace.getRacingCarEntry().getRacingCars().size()).isEqualTo(3);
 		assertThat(carRace.getRacingCarEntry().getRacingCars().get(0).getRacingCarName()).isEqualTo("twins");
@@ -48,7 +48,7 @@ class CarRaceTest {
 	void racingTest() {
 		String carNames = "twins,bear,tiger";
 		String racingRound = "15";
-		carRace = new CarRace(carNames, racingRound);
+		carRace = new CarRace(new RacingCarEntry(carNames), racingRound);
 		carRace.racing();
 
 		assertThat(carRace.getRacingCarEntry().getRacingCars().get(0).getRacingLapCount() > 0).isTrue();

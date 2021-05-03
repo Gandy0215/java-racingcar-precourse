@@ -9,10 +9,10 @@ public class CarRace {
 	final private CarRacingConsole carRacingConsole;
 	final int raceRound;
 
-	public CarRace(String entryCarNames, String raceRound) {
+	public CarRace(RacingCarEntry racingCarEntry, String raceRound) {
 		CarRaceValidationUtils raceValidationUtils = new CarRaceValidationUtils();
 		this.carRacingConsole = new CarRacingConsole();
-		this.racingCarEntry = new RacingCarEntry(entryCarNames);
+		this.racingCarEntry = racingCarEntry;
 		this.raceRound = raceValidationUtils.validateRacingRound(raceRound);
 	}
 
